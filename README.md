@@ -8,6 +8,7 @@ Books will be available (page by page) in plain text and HTML. In future iterati
 ## Rules
 - Do not use any frameworks. A good developer must know how to select his tools and how to use them.
 - The use of third-party libraries is allowed and encouraged.
+
 ## Technical Requirements 
 
 - Get list of books
@@ -16,21 +17,6 @@ Books will be available (page by page) in plain text and HTML. In future iterati
 - Make use of friendly routes (for example: `/book/1` or `/book/1 /page/11/html`)
 - Provide seeders / migrations for the database (books with their pages)
 - Provide instruccions on project setup/configuration
-
-## Rules
-- Do not use any frameworks. A good developer must know how to select his tools and how to use them.
-- The use of third-party libraries is allowed and encouraged.
-
-## Evaluation Criteria
-
-1. Technical requirements.
-2. Organization and consistency of the file and folder structure.
-3. Modifiability and extendability of the system where required. 
-4. Commit history (commits are organized and descriptive).
-5. Time used to complete the test.
-6. Complexity of the solution.
-7. Correct usage of SOLID principles.
-8. Correct usage of design patterns.
 
 ## Let's Go
 
