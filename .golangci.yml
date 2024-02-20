@@ -1,0 +1,15 @@
+linters:
+  enable-all: true
+  disable:
+    - typecheck
+    - lll
+
+linters-settings:
+  deadcode:
+    skip-dirs-use-default: true
+    skip-dirs: _test
+
+run:
+  skip-files: 
+    - ^(.*/)?\..*
+    - ^vendor/.*/?(_test)?$  
