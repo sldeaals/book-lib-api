@@ -1,0 +1,33 @@
+name: Code Quality Checks
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.17
+
+      - name: Install dependencies
+        run: |
+          go get -v -t -d ./...
+          if [ -f Gopkg.toml ]; then
+              curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+              dep ensure
+          fi
+
+      - name: Run golangci-lint
+        run: golangci-lint run
+
+      - name: Run prettier (if applicable)
+        run: npx prettier --check .
