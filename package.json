@@ -1,0 +1,25 @@
+{
+  "name": "book-lib-api",
+  "version": "1.0.0",
+  "description": "Golang book library API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sldeaals/book-lib-api.git"
+  },
+  "keywords": [
+    "Golang"
+  ],
+  "author": "Daniel Arias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sldeaals/book-lib-api/issues"
+  },
+  "homepage": "https://github.com/sldeaals/book-lib-api#readme",
+  "devDependencies": {
+    "prettier": "3.2.5"
+  }
+}
