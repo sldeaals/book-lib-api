@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"net/http"
+	"strconv"
 
 	_ "github.com/go-sql-driver/mysql"
 
@@ -38,7 +39,10 @@ func main() {
 	setupRoutes()
 
 	// Start the server
-	port := 8080 // Change this value if needed
+	port, err := getPortFromEnv()
+	if err != nil {
+		log.Fatal(err)
+	}
 	fmt.Printf("Server is running on :%d...\n", port)
 	log.Fatal(http.ListenAndServe(fmt.Sprintf(":%d", port), nil))
 }
@@ -64,4 +68,19 @@ func setupRoutes() {
 
 	// Setup routes for book pages
 	bookPage.Routes(db)
+}
+
+func getPortFromEnv() (int, error) {
+	portStr := os.Getenv("SERVER_PORT")
+	if portStr == "" {
+		// Default port if not specified in .env
+		return 8080, nil
+	}
+
+	port, err := strconv.Atoi(portStr)
+	if err != nil {
+		return 0, fmt.Errorf("failed to convert SERVER_PORT to integer: %v", err)
+	}
+
+	return port, nil
 }
